@@ -1,0 +1,9 @@
+debate_sim/.env
+debate_sim/__pycache__
+debate_sim/.ipynb_checkpoints
+debate_sim/*.json
+debate_sim/llm/__pycache__
+debate_sim/llm/.ipynb_checkpoints
+debate_sim/llm/providers/__pycache__
+debate_sim/llm/providers/.ipynb_checkpoints
+debate_sim/logs/
