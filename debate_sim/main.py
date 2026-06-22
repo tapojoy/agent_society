@@ -33,10 +33,10 @@ for i in range(0, TOTAL_INTERACTIONS):
 
     if i % 4 == 0:
         interaction_type = "formal"
-        participants = select_participants(all_agents, NUM_PARTICIPANTS)
+        participants = select_participants(all_agents, NUM_PARTICIPANTS, interaction_type)
     else:
         interaction_type = "informal"
-        participants = select_participants(all_agents, 2)
+        participants = select_participants(all_agents, 2, interaction_type)
 
     print(f"{interaction_type.upper()} : {interaction_id}")
     print([a.name for a in participants])

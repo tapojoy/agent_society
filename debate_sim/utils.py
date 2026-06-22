@@ -308,7 +308,7 @@ def load_population(filepath):
     return agents
 
 
-def select_participants(agents, num_participants):
+def select_participants(agents, num_participants, interaction_type):
     for agent in agents:
         agent.interactions_since_last_participation += 1
     eligible = [
@@ -318,7 +318,26 @@ def select_participants(agents, num_participants):
     ]
     if len(eligible) < num_participants:
         eligible = agents
-    participants = random.sample(eligible, num_participants)
+    if interaction_type == "formal":
+        participants = random.sample(eligible, num_participants)
+    else:
+        agent_a = random.choice(eligible)
+        candidates = []
+        weights = []
+        for agent_b in eligible:
+            if agent_b.name == agent_a.name:
+                continue
+            weight = 5 # everyone has a small chance
+            if agent_b.school == agent_a.school:
+                weight += 60
+            if agent_b.grade == agent_a.grade:
+                weight += 25
+            if agent_b.neighborhood == agent_a.neighborhood:
+                weight += 10
+            candidates.append(agent_b)
+            weights.append(weight)
+        agent_b = random.choices(candidates, weights=weights, k=1)[0]
+        participants = [agent_a, agent_b]
     for agent in participants:
         agent.interactions_since_last_participation = 0
         agent.interactions_participated += 1
