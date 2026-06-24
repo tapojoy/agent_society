@@ -7,3 +7,10 @@ debate_sim/llm/.ipynb_checkpoints
 debate_sim/llm/providers/__pycache__
 debate_sim/llm/providers/.ipynb_checkpoints
 debate_sim/logs/
+rag/.env
+rag/.ipynb_checkpoints
+rag/.gitignore
+rag/ingestion/.ipynb_checkpoints
+rag/ingestion/__pycache__
+rag/ingestion/raw_articles
+rag/ingestion/processed_articles
