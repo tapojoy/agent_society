@@ -14,3 +14,4 @@ rag/ingestion/.ipynb_checkpoints
 rag/ingestion/__pycache__
 rag/ingestion/raw_articles
 rag/ingestion/processed_articles
+rag/ingestion/chunks
