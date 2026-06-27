@@ -10,6 +10,7 @@ debate_sim/logs/
 rag/.env
 rag/.ipynb_checkpoints
 rag/.gitignore
+rag/__pycache__/
 rag/ingestion/.ipynb_checkpoints
 rag/ingestion/__pycache__
 rag/ingestion/raw_articles

@@ -10,11 +10,17 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 
-RAW_ARTICLES_DIR = BASE_DIR / "raw_articles"
-PROCESSED_ARTICLES_DIR = BASE_DIR / "processed_articles"
+INGESTION_DIR = BASE_DIR / "ingestion"
 
-RAW_ARTICLES_DIR.mkdir(exist_ok=True)
-PROCESSED_ARTICLES_DIR.mkdir(exist_ok=True)
+RAW_ARTICLES_DIR = INGESTION_DIR / "raw_articles"
+PROCESSED_ARTICLES_DIR = INGESTION_DIR / "processed_articles"
+CHUNK_DIR = INGESTION_DIR / "chunks"
+EMBEDDED_DIR = INGESTION_DIR / "embedded"
+
+RAW_ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
+PROCESSED_ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
+CHUNK_DIR.mkdir(parents=True, exist_ok=True)
+EMBEDDED_DIR.mkdir(parents=True, exist_ok=True)
 
 MEDIAWIKI_API = os.getenv("MEDIAWIKI_API")
 USER_AGENT = os.getenv("USER_AGENT")
@@ -26,6 +32,9 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL")
 
 WEAVIATE_URL = os.getenv("WEAVIATE_URL")
 WEAVIATE_API_KEY = os.getenv("WEAVIATE_API_KEY")
+
+WEAVIATE_HTTP_PORT = int(os.getenv("WEAVIATE_HTTP_PORT", 8080))
+WEAVIATE_GRPC_PORT = int(os.getenv("WEAVIATE_GRPC_PORT", 50051))
 
 COLLECTION_NAME = os.getenv("COLLECTION_NAME")
 
