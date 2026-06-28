@@ -6,11 +6,11 @@ debate_sim/llm/__pycache__
 debate_sim/llm/.ipynb_checkpoints
 debate_sim/llm/providers/__pycache__
 debate_sim/llm/providers/.ipynb_checkpoints
-debate_sim/logs/
+debate_sim/logs
 rag/.env
 rag/.ipynb_checkpoints
 rag/.gitignore
-rag/__pycache__/
+rag/__pycache__
 rag/ingestion/.ipynb_checkpoints
 rag/ingestion/__pycache__
 rag/ingestion/raw_articles
@@ -19,3 +19,8 @@ rag/ingestion/chunks
 rag/ingestion/embedded
 rag/scripts/.ipynb_checkpoints
 rag/scripts/__pycache__
+ollama_gateway/.env
+ollama_gateway/__pycache__
+ollama_gateway/.ipynb_checkpoints
+ollama_gateway/.gitignore
+ollama_gateway/logs
