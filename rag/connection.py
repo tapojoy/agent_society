@@ -5,14 +5,13 @@ from weaviate.auth import AuthApiKey
 from config import (
     WEAVIATE_URL,
     WEAVIATE_HTTP_PORT,
-    WEAVIATE_GRPC_PORT,
-    WEAVIATE_API_KEY
+    WEAVIATE_GRPC_PORT
 )
 
 _client = None
 
 
-def get_client():
+def get_client(api_key):
     global _client
 
     if _client is not None and _client.is_connected():
@@ -35,7 +34,7 @@ def get_client():
         grpc_port=WEAVIATE_GRPC_PORT,
         grpc_secure=secure,
         auth_credentials=AuthApiKey(
-            WEAVIATE_API_KEY
+            api_key
         )
     )
 
